@@ -1,15 +1,12 @@
-const { readFileSync } = require('node:fs');
-const { join } = require('node:path');
-const db = require('./db.js');
+const { readFileSync } = require("node:fs");
+const { join } = require("node:path");
+const db = require("./db.js");
 
-const seedPath = join(__dirname, 'seed.sql');
-const seed = readFileSync(seedPath, 'utf-8');
+const seedPath = join(__dirname, "seed.sql");
+const seed = readFileSync(seedPath, "utf-8");
 
-function seeddb() {
-  db.exec(seed);
-}
-seeddb();
+console.log(seed,"!!!!!!!!!!!!!!!!!"); // Add this line for debugging
 
-console.log('DB seeded with example data');
+db.exec(seed);
 
-module.exports = { seeddb };
+console.log("DB seeded with example data");
