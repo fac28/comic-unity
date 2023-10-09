@@ -1,0 +1,31 @@
+{
+  "name": "comic-unity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "DB_FILE=db.sqlite COOKIE_SECRET=abc nodemon src/index.js",
+    "seed": "DB_FILE=db.sqlite node src/database/seed.js",
+    "test": "DB_FILE=test.sqlite COOKIE_SECRET=abc node --test",
+    "start": "node src/index.js",
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^8.7.0",
+    "body-parser": "^1.20.2",
+    "canvas": "^2.11.2",
+    "cookie-parser": "^1.4.6",
+    "eslint-plugin-prettier": "^5.0.0",
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.51.0",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3"
+  }
+}
