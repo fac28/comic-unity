@@ -1,16 +1,15 @@
-function testTag (base64image) {
+function renderImage (content) {
     return /*html*/ `
     <!doctype html>
     <html lang="en">
       <head>
         <meta charset="UTF-8">
-        <title>Test</title>
-        
+        <title>Test</title> 
       </head>
       <body>
             <main>
             <h1>test</h1>
-                <img src="data:image/png;base64,${base64image}" alt="Base64 Image">          
+                ${content}         
             </main>
         </div>
       </body>
@@ -18,4 +17,4 @@ function testTag (base64image) {
   `;
 }
 
-module.exports = { testTag };
+module.exports = { renderImage };

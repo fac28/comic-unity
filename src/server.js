@@ -2,18 +2,12 @@
 const express = require('express')
 const app = express()
 
-const templates = require('./templates/testTemplates.js')
+const templates = require('./templates/renderImage.js')
 const {listComics} = require('./model/comic.js')
 
+const homeRoutes = require("./routes/home.js");
 
+app.use("/", homeRoutes);
 
-app.get('/', (req, res) => {
-
-
-    const content = listComics()[0].imageBLOB
-    const html = templates.testTag(content)
-
-    res.send(html)
-})
 
 module.exports = app;

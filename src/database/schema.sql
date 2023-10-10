@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS users (
 
 CREATE TABLE IF NOT EXISTS comics (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  imageBLOB TEXT,
+  image TEXT,
   caption TEXT,
   user_id INTEGER
 );
