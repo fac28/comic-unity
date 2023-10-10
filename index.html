@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Blob Image</title>
+</head>
+<body>
+    <h1>Random Blob Image</h1>
+    <img id="randomBlobImage" alt="Random Blob Image">
+    <script>
+        // Generate a random blob (32x32 pixels) with random RGB values
+        const blobSize = 32 * 32 * 3; // 3 channels (R, G, B)
+        const blobData = new Uint8Array(blobSize);
+        window.crypto.getRandomValues(blobData);
+
+        // Convert blob data to a base64-encoded string
+        const blobBase64 = btoa(String.fromCharCode.apply(null, blobData));
+
+        // Set the src attribute of the image element
+        const imgElement = document.getElementById('randomBlobImage');
+        imgElement.src = `data:image/png;base64,${blobBase64}`;
+    </script>
+</body>
+</html>
