@@ -6,12 +6,14 @@ const fs = require('node:fs');
 const cookieParser = require('cookie-parser');
 
 const app = express();
-const homeRoutes = require('./routes/home');
+const homeRoutes = require('./routes/home.js');
+const drawRoutes = require('./routes/draw.js');
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(staticHandler);
 app.use('/', homeRoutes);
+app.use('/draw', drawRoutes);
 
 app.post('/save', (req, res) => {
   try {

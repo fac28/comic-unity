@@ -1,4 +1,4 @@
-const comicHome = (content) => {
+const drawImage = () => {
   return /*html*/ `
     <!doctype html>
     <html lang="en">
@@ -12,14 +12,16 @@ const comicHome = (content) => {
       <body>
         <header>
           <h1>Comic-unity</h1>
-          <form><button>+</button></form>
+          <form><button>Go back</button></form>
         </header>
         <main>
-          ${content}
+          <canvas id='canvas' height="500px" width="500px"></canvas>
+          <button id='save-button'>Save Image</button>
         </main>
+        <script src='draw.js'></script>
       </body>
     </html>
   `;
 };
 
-module.exports = comicHome;
+module.exports = drawImage;
