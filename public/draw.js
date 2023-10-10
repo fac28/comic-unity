@@ -55,17 +55,23 @@ saveButton.addEventListener('click', () => {
 
   fetch(endpoint, {
     method: 'POST',
+    redirect: 'follow',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ image: base64Data }),
-  }).then((response) => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json(); // Parse the response body as JSON
-  })``.catch((error) => {
-    // Handle errors here
-    console.error('There was a problem with the fetch operation:', error);
-  });
+
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      if (response.redirected) {
+        window.location.href = response.url;
+      }
+    })
+    .catch((error) => {
+      // Handle errors here
+      console.error('There was a problem with the fetch operation:', error);
+    });
 });

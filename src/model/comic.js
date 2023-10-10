@@ -1,4 +1,4 @@
-const db = require("../database/db.js");
+const db = require('../database/db.js');
 
 const insert_comic = db.prepare(/*sql*/ `
   INSERT INTO comics (image, caption, user_id)
@@ -6,8 +6,8 @@ const insert_comic = db.prepare(/*sql*/ `
   RETURNING id
 `);
 
-function createComic(image, caption, user_id) {
-  return insert_comic.get({ image, caption, user_id});
+function createComic(image, caption = 'fun', user_id = 'Anonymous') {
+  return insert_comic.get({ image, caption, user_id });
 }
 
 const select_comics = db.prepare(/*sql*/ `
@@ -26,4 +26,4 @@ function listComics() {
 
 // console.log(base64Data)
 
-module.exports = { createComic, listComics }
+module.exports = { createComic, listComics };
