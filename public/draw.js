@@ -2,6 +2,7 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 let painting = false;
+let colour = 'black';
 
 function startPosition(e) {
   painting = true;
@@ -18,7 +19,7 @@ function draw(e) {
 
   ctx.lineWidth = 5;
   ctx.lineCap = 'round';
-  ctx.strokeStyle = 'black';
+  ctx.strokeStyle = colour;
 
   ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
   ctx.stroke();
@@ -29,6 +30,18 @@ function draw(e) {
 canvas.addEventListener('mousedown', startPosition);
 canvas.addEventListener('mouseup', endPosition);
 canvas.addEventListener('mousemove', draw);
+
+//Colour event listeners
+const controls = document.querySelector('.controls');
+
+controls.addEventListener('click', (event) => {
+  const target = event.target.id;
+  console.log(target);
+  if (target === 'black-button') colour = 'black';
+  if (target === 'blue-button') colour = 'cornflowerblue';
+  if (target === 'red-button') colour = 'salmon';
+
+});
 
 //Save button
 const saveButton = document.getElementById('save-button');
@@ -47,6 +60,7 @@ saveButton.addEventListener('click', () => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ image: base64Data }),
+
   })
     .then((response) => {
       if (!response.ok) {

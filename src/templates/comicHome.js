@@ -10,12 +10,18 @@ const comicHome = (content) => {
     <title>Comic-Unity</title>
       </head>
       <body>
-        <header>
+        <header class='header'>
           <h1>Comic-unity</h1>
-          <form><button>+</button></form>
+          <form action="/button" method="GET"><button type="submit" class="button">+</button></form>
         </header>
-        <main>
-          ${content}
+        <main class="card-container">
+          ${content
+            .map(
+              (x) => /*html*/ `<div class="card">
+                  <img src="data:image/png;base64,${x.image}" alt="Base64 Image">
+                </div>`
+            )
+            .join('')}
         </main>
       </body>
     </html>

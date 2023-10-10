@@ -2,17 +2,22 @@ const express = require('express');
 const router = express.Router();
 const comicHome = require('../templates/comicHome');
 
-const { listComics } = require("../model/comic.js")
+const { listComics } = require("../model/comic.js");
+const drawImage = require('../templates/drawImage');
 
 router.get('/', (req, res) => {
   try {
     const content = listComics()
-      .map(
-        (x) => `<img src="data:image/png;base64,${x.image}" alt="Base64 Image">`
-      )
-      .join('');
-
     res.send(comicHome(content));
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
+});
+
+router.get('/button', (req, res) => {
+  try {
+    res.redirect('/draw');
   } catch (err) {
     console.log(err);
     throw err;

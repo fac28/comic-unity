@@ -12,14 +12,15 @@ router.get('/', (req, res) => {
   }
 });
 
-// const { createComic } = require('../model/comic.js');
 
-// router.post('/', (req, res) => {
-//   const dataURL = req.body.image;
-//   const base64Data = dataURL.replace(/^data:image\/png;base64,/, ''); // Remove data prefix
+router.get('/back-button', (req, res) => {
+  try {
+    res.redirect('/');
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
+});
 
-//   createComic(base64Data);
-//   res.redirect('/..');
-// });
 
 module.exports = router;
