@@ -42,6 +42,7 @@ saveButton.addEventListener('click', () => {
 
   fetch(endpoint, {
     method: 'POST',
+    redirect: 'follow',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -51,8 +52,10 @@ saveButton.addEventListener('click', () => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      return response.json(); // Parse the response body as JSON
-    })``
+      if (response.redirected) {
+        window.location.href = response.url;
+      }
+    })
     .catch((error) => {
       // Handle errors here
       console.error('There was a problem with the fetch operation:', error);
