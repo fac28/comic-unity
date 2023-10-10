@@ -1,5 +1,4 @@
-
-const comicHome = () => {
+const comicHome = (content) => {
   return /*html*/ `
     <!doctype html>
     <html lang="en">
@@ -11,11 +10,14 @@ const comicHome = () => {
     <title>Comic-Unity</title>
       </head>
       <body>
-        <h1>Hello</h1>
-        <canvas id='canvas' width="500px" height="500px"></canvas>
-        <button id="save-button">Save Button</button>
+        <header>
+          <h1>Comic-unity</h1>
+          <form><button>+</button></form>
+        </header>
+        <main>
+          ${content}
+        </main>
       </body>
-      <script src="draw.js"></script>
     </html>
   `;
 };
