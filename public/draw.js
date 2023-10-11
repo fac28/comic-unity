@@ -1,4 +1,5 @@
 const canvas = document.getElementById('canvas');
+const caption = document.getElementById('caption');
 const ctx = canvas.getContext('2d');
 
 let painting = false;
@@ -75,7 +76,7 @@ saveButton.addEventListener('click', () => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ image: base64Data }),
+    body: JSON.stringify({ image: base64Data, caption: caption.value }),
   })
     .then((response) => {
       if (!response.ok) {

@@ -3,7 +3,7 @@ const router = express.Router();
 const comicHome = require('../templates/comicHome');
 
 const { listComics } = require('../model/comic.js');
-const drawImage = require('../templates/drawImage');
+// const drawImage = require('../templates/drawImage');
 
 router.get('/', (req, res) => {
   try {
