@@ -68,7 +68,17 @@ saveButton.addEventListener('click', () => {
   const endpoint = '/save';
   const dataURL = canvas.toDataURL('image/png');
   const base64Data = dataURL.replace(/^data:image\/png;base64,/, ''); // Remove data prefix
-  // Send the dataURL to the server for saving
+
+  if (caption.value.length > 50) {
+    // alert('Please enter a caption with fewer than 50 characters.');
+    if (!document.getElementById('captionError')) {
+      const feedback = document.createElement('p');
+      feedback.textContent = '⚠️ Caption limit of 50 characters!';
+      feedback.setAttribute('id', 'captionError');
+      caption.after(feedback);
+    }
+    return console.log(caption.value.length);
+  }
 
   fetch(endpoint, {
     method: 'POST',
