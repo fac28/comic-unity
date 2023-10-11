@@ -11,7 +11,7 @@ function createComic(image, caption = 'default', user_id = 'Anonymous') {
 }
 
 const select_comics = db.prepare(/*sql*/ `
-  SELECT image FROM comics 
+  SELECT image, caption FROM comics 
 `);
 
 function listComics() {

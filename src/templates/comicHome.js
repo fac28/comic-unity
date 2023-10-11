@@ -19,6 +19,7 @@ const comicHome = (content) => {
             .map(
               (x) => /*html*/ `<div class="card">
                   <img src="data:image/png;base64,${x.image}" alt="Base64 Image">
+                  <p>${x.caption}</p>
                 </div>`
             )
             .join('')}
