@@ -138,3 +138,7 @@ h1 {
   width: 15rem;
   resize: none;
 }
+
+#captionError {
+  color: red;
+}
