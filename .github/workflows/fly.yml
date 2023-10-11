@@ -25,6 +25,9 @@ jobs:
       - name: Run ESLint and Prettier
         run: npm run lint-and-format
 
+      - name: Run Tests
+        run: npm test
+
       - name: Set up Flyctl
         uses: superfly/flyctl-actions/setup-flyctl@master
         with:
@@ -37,3 +40,6 @@ jobs:
 
       # - name: Remove console.log statements
       #   run: npm run remove-logs
+
+      # - name: Remove Comments
+      #   run: npm run remove-comments
