@@ -24,17 +24,8 @@ async function request(pathname, options = {}) {
   return { status: response.status, body, headers };
 }
 
-const get_comic = db.prepare(/*sql*/ `
-  SELECT id, image, caption, user_id FROM comics WHERE id = ?
-`);
-
-function getComicById(id) {
-  return get_comic.get(id);
-}
-
 module.exports = {
   reset,
   request,
   db,
-  getComicById,
 };

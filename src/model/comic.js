@@ -18,12 +18,12 @@ function listComics() {
   return select_comics.all();
 }
 
-// console.log(listComics())
+const get_comic = db.prepare(/*sql*/ `
+  SELECT id, image, caption, user_id, created_at FROM comics WHERE id = ?
+`);
 
-// bufferData = Buffer.from(listComics()[0].image);
+function getComicById(id) {
+  return get_comic.get(id);
+}
 
-// base64Data = bufferData.toString('base64');
-
-// console.log(base64Data)
-
-module.exports = { createComic, listComics };
+module.exports = { createComic, listComics, getComicById };
