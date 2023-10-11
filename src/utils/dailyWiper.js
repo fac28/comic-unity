@@ -1,17 +1,28 @@
-let day = new Date().getDay();
+const db = require(`../database/db.js`);
+const { getComicById } = require(`../model/comic.js`);
 
 function reset() {
   db.exec(/*sql*/ `
         DELETE FROM comics;
+        DELETE FROM sqlite_sequence WHERE name IN ('comics');
       `);
 }
 
-function dailyWiper(day) {
-  const currentDay = new Date().getDay(); // Get the current day (0 for Sunday, 1 for Monday, etc.)
+function dailyWiper() {
+  let comicDay;
 
-  if (currentDay !== day) {
+  if (getComicById(1)) {
+    comicDay = new Date(getComicById(1).created_at).getDay();
+  } else {
+    comicDay = new Date().getDay();
+    console.log('no id=1 comic found');
+  }
+
+  let currentDay = new Date().getDay();
+
+  if (currentDay !== comicDay) {
     reset();
-    day = currentDay;
+    console.log('comic database reset');
   }
 }
 

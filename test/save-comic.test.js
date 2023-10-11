@@ -1,7 +1,8 @@
 const test = require('node:test');
 const assert = require('node:assert');
 
-const { reset, request, getComicById } = require('./helpers.js');
+const { reset, request } = require('./helpers.js');
+const { getComicById } = require(`../src/model/comic.js`);
 
 test('POSTs to /save stores a new comic square', async function () {
   // Call the reset function before running the test

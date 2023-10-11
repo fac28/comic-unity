@@ -3,10 +3,12 @@ const router = express.Router();
 const comicHome = require('../templates/comicHome');
 
 const { listComics } = require('../model/comic.js');
-// const drawImage = require('../templates/drawImage');
+// const { dailyWiper } = require('../utils/dailyWiper');
 
 router.get('/', (req, res) => {
   try {
+    // dailyWiper clears comic every new day. Comment out to disable
+    // dailyWiper();
     const content = listComics();
     res.send(comicHome(content));
   } catch (err) {
@@ -23,19 +25,5 @@ router.get('/button', (req, res) => {
     throw err;
   }
 });
-
-// router.post('/save', (req, res) => {
-//   const dataURL = req.body.image;
-//   const base64Data = dataURL.replace(/^data:image\/png;base64,/, ''); // Remove data prefix
-//   const binaryData = Buffer.from(base64Data, 'base64');
-//   console.log(binaryData, dataURL);
-// });
-
-// router.get('/', (req, res) => {
-//     // const content = listComics()[0].image
-//     const content = listComics().map(x=> `<img src="data:image/png;base64,${x.image}" alt="Base64 Image">`).join('')
-//     const html = templates.renderImage(content)
-//     res.send(html)
-// })
 
 module.exports = router;
