@@ -18,10 +18,22 @@ const drawImage = () => {
           <div class="flex">
             <canvas id='canvas' height="500px" width="500px"></canvas>
             <div class="flex-column">
-              <div class="controls">
-                <button id='red-button' class="button red">red</button>
-                <button id='blue-button' class="button blue">blue</button>
-                <button id='black-button' class="button">black</button>
+              <div class="color-controls">
+                <button id='black-button' class="color-button"></button>
+                <button id='white-button' class="color-button white"></button>
+                <button id='red-button' class="color-button red"></button>
+                <button id='orange-button' class="color-button orange"></button>
+                <button id='yellow-button' class="color-button yellow"></button>
+                <button id='green-button' class="color-button green"></button>
+                <button id='blue-button' class="color-button blue"></button>
+                <button id='purple-button' class="color-button purple"></button>
+              </div>
+              <div class="thickness-controls">
+                <button id='thickness-1' class="thickness-button"></button>
+                <button id='thickness-2' class="thickness-button"></button>
+                <button id='thickness-3' class="thickness-button"></button>
+                <button id='thickness-4' class="thickness-button"></button>
+                <button id='thickness-5' class="thickness-button"></button>
               </div>
               <button id='save-button' class="button">Save Image</button>
             </div>

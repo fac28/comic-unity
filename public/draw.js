@@ -2,7 +2,8 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 let painting = false;
-let colour = 'black';
+let colour = '#333';
+let thickness = 5;
 
 function startPosition(e) {
   painting = true;
@@ -17,7 +18,7 @@ function endPosition() {
 function draw(e) {
   if (!painting) return;
 
-  ctx.lineWidth = 5;
+  ctx.lineWidth = thickness;
   ctx.lineCap = 'round';
   ctx.strokeStyle = colour;
 
@@ -32,15 +33,30 @@ canvas.addEventListener('mouseup', endPosition);
 canvas.addEventListener('mousemove', draw);
 
 //Colour event listeners
-const controls = document.querySelector('.controls');
+const colControls = document.querySelector('.color-controls');
+const thicknessControls = document.querySelector('.thickness-controls');
 
-controls.addEventListener('click', (event) => {
+colControls.addEventListener('click', (event) => {
   const target = event.target.id;
   console.log(target);
-  if (target === 'black-button') colour = 'black';
-  if (target === 'blue-button') colour = 'cornflowerblue';
+  if (target === 'black-button') colour = '#333';
+  if (target === 'white-button') colour = 'white';
   if (target === 'red-button') colour = 'salmon';
+  if (target === 'orange-button') colour = '#faae70';
+  if (target === 'yellow-button') colour = '#f8db3a';
+  if (target === 'green-button') colour = '#b1e052';
+  if (target === 'blue-button') colour = 'cornflowerblue';
+  if (target === 'purple-button') colour = 'mediumpurple';
+});
 
+thicknessControls.addEventListener('click', (event) => {
+  const target = event.target.id;
+  console.log(target);
+  if (target === 'thickness-1') thickness = 2;
+  if (target === 'thickness-2') thickness = 5;
+  if (target === 'thickness-3') thickness = 10;
+  if (target === 'thickness-4') thickness = 20;
+  if (target === 'thickness-5') thickness = 40;
 });
 
 //Save button
