@@ -38,27 +38,84 @@ const colControls = document.querySelector('.color-controls');
 const thicknessControls = document.querySelector('.thickness-controls');
 
 colControls.addEventListener('click', (event) => {
-  const target = event.target.id;
-  console.log(target);
-  if (target === 'black-button') colour = '#333';
-  if (target === 'white-button') colour = 'white';
-  if (target === 'red-button') colour = 'salmon';
-  if (target === 'orange-button') colour = '#faae70';
-  if (target === 'yellow-button') colour = '#f8db3a';
-  if (target === 'green-button') colour = '#b1e052';
-  if (target === 'blue-button') colour = 'cornflowerblue';
-  if (target === 'purple-button') colour = 'mediumpurple';
+  const target = event.target;
+  switch (target.id) {
+    case 'black-button':
+      colour = '#333';
+      colorSelected(target, '6495ed');
+      break;
+    case 'white-button':
+      colour = 'white';
+      colorSelected(target, '6495ed');
+      break;
+    case 'red-button':
+      colour = 'salmon';
+      colorSelected(target, '6495ed');
+      break;
+    case 'orange-button':
+      colour = '#faae70';
+      colorSelected(target, '6495ed');
+      break;
+    case 'yellow-button':
+      colour = '#f8db3a';
+      colorSelected(target, '9370d8');
+      break;
+    case 'green-button':
+      colour = '#b1e052';
+      colorSelected(target, 'faae70');
+      break;
+    case 'blue-button':
+      colour = 'cornflowerblue';
+      colorSelected(target, 'faae70');
+      break;
+    case 'purple-button':
+      colour = 'mediumpurple';
+      colorSelected(target, 'faae70');
+      break;
+  }
 });
 
+function colorSelected(e, color) {
+  const buttons = document.querySelectorAll('.color-button');
+  for (const button of buttons) {
+    button.style.boxShadow = "";
+  }
+  e.style.boxShadow = `inset 0 0 0 5px #${color}`;
+}
+
 thicknessControls.addEventListener('click', (event) => {
-  const target = event.target.id;
-  console.log(target);
-  if (target === 'thickness-1') thickness = 2;
-  if (target === 'thickness-2') thickness = 5;
-  if (target === 'thickness-3') thickness = 10;
-  if (target === 'thickness-4') thickness = 20;
-  if (target === 'thickness-5') thickness = 40;
+  const target = event.target;
+  switch (target.id) {
+    case 'thickness-1':
+      thickness = 2;
+      thicknessSelected(target);
+      break;
+    case 'thickness-2':
+      thickness = 5;
+      thicknessSelected(target);
+      break;
+    case 'thickness-3':
+      thickness = 10;
+      thicknessSelected(target);
+      break;
+    case 'thickness-4':
+      thickness = 20;
+      thicknessSelected(target);
+      break;
+    case 'thickness-5':
+      thickness = 40;
+      thicknessSelected(target);
+      break;
+  }
 });
+
+function thicknessSelected(e) {
+  const buttons = document.querySelectorAll('.thickness-button');
+  for (const button of buttons) {
+    button.style.boxShadow = "";
+  }
+  e.style.boxShadow = `inset 0 0 0 5px #6495ed`;
+}
 
 //Save button
 const saveButton = document.getElementById('save-button');
