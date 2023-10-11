@@ -6,7 +6,7 @@ const insert_comic = db.prepare(/*sql*/ `
   RETURNING id
 `);
 
-function createComic(image, caption = 'fun', user_id = 'Anonymous') {
+function createComic(image, caption = 'default', user_id = 'Anonymous') {
   return insert_comic.get({ image, caption, user_id });
 }
 
