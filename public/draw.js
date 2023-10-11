@@ -40,7 +40,6 @@ controls.addEventListener('click', (event) => {
   if (target === 'black-button') colour = 'black';
   if (target === 'blue-button') colour = 'cornflowerblue';
   if (target === 'red-button') colour = 'salmon';
-
 });
 
 //Save button
@@ -60,7 +59,6 @@ saveButton.addEventListener('click', () => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ image: base64Data }),
-
   })
     .then((response) => {
       if (!response.ok) {

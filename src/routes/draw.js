@@ -12,7 +12,6 @@ router.get('/', (req, res) => {
   }
 });
 
-
 router.get('/back-button', (req, res) => {
   try {
     res.redirect('/');
@@ -21,6 +20,5 @@ router.get('/back-button', (req, res) => {
     throw err;
   }
 });
-
 
 module.exports = router;
