@@ -9,7 +9,8 @@
     "test": "DB_FILE=test.sqlite COOKIE_SECRET=abc node --test",
     "start": "node src/index.js",
     "lint-and-format": "eslint . --fix && prettier --write .",
-    "remove-logs": "babel --plugins=babel-plugin-transform-remove-console src/ -d dist/"
+    "remove-logs": "babel src/ -d dist/",
+    "remove-comments": "node_modules/.bin/strip-comments '**/*.js' -d"
   },
   "keywords": [],
   "author": "",
@@ -25,10 +26,14 @@
     "socket.io": "^4.7.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20",
     "@flydotio/dockerfile": "^0.4.10",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "eslint": "^8.51.0",
     "nodemon": "^3.0.1",
-    "prettier": "^3.0.3"
+    "prettier": "^3.0.3",
+    "strip-comments": "^2.0.1"
   }
 }
