@@ -8,9 +8,7 @@
     "seed": "DB_FILE=db.sqlite node src/database/seed.js",
     "test": "DB_FILE=test.sqlite COOKIE_SECRET=abc node --test",
     "start": "node src/index.js",
-    "lint-and-format": "eslint . --fix && prettier --write .",
-    "remove-logs": "babel src/ -d dist/",
-    "remove-comments": "node_modules/.bin/strip-comments '**/*.js' -d"
+    "lint-and-format": "eslint . --fix && prettier --write ."
   },
   "keywords": [],
   "author": "",
