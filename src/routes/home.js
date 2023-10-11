@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 const comicHome = require('../templates/comicHome');
 
-const { listComics } = require("../model/comic.js");
+const { listComics } = require('../model/comic.js');
 const drawImage = require('../templates/drawImage');
 
 router.get('/', (req, res) => {
   try {
-    const content = listComics()
+    const content = listComics();
     res.send(comicHome(content));
   } catch (err) {
     console.log(err);
