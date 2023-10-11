@@ -17,6 +17,8 @@ const drawImage = () => {
         <main class="card-container">
           <div class="flex">
             <canvas id='canvas' height="500px" width="500px"></canvas>
+            <div class="flex-column justify-content-center"><p>Caption:</p><textarea name="caption" id="caption" rows="6">Default Text</textarea>
+            </div>
             <div class="flex-column">
               <div class="color-controls">
                 <button id='black-button' class="color-button"></button>

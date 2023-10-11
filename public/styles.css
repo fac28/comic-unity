@@ -22,6 +22,10 @@ h1 {
   justify-content: space-around;
 }
 
+.justify-content-center {
+  justify-content: center;
+}
+
 /* Components */
 
 #canvas {
@@ -128,4 +132,9 @@ h1 {
   justify-content: center;
   gap: 3rem;
   margin: 5rem 3rem 5rem 3rem;
+}
+
+#caption {
+  width: 15rem;
+  resize: none;
 }
