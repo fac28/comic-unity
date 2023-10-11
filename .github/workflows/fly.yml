@@ -37,9 +37,3 @@ jobs:
         run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-
-      # - name: Remove console.log statements
-      #   run: npm run remove-logs
-
-      # - name: Remove Comments
-      #   run: npm run remove-comments
