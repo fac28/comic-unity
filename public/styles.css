@@ -53,8 +53,8 @@ h1 {
   all: unset;
   padding: 1.5rem;
   border-radius: 50%;
-  cursor: pointer;
   background-color: #333;
+  cursor: pointer;
 }
 
 .white {
