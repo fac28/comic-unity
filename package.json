@@ -8,8 +8,8 @@
     "seed": "DB_FILE=db.sqlite node src/database/seed.js",
     "test": "DB_FILE=test.sqlite COOKIE_SECRET=abc node --test",
     "start": "node src/index.js",
-    "lint": "eslint .",
-    "prettier": "prettier --write ."
+    "lint-and-format": "eslint . --fix && prettier --write .",
+    "remove-logs": "babel --plugins=babel-plugin-transform-remove-console src/ -d dist/"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.4.10",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "eslint": "^8.51.0",
     "nodemon": "^3.0.1",
     "prettier": "^3.0.3"
