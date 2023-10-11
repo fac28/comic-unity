@@ -9,13 +9,13 @@ https://comic-unity.fly.dev/
 1. Clone the repository to your local machine:
 
 ```shell
-git clone https://github.com/fac28/bookmarks2.git
+git clone https://github.com/fac28/comic-unity.git
 ```
 
 2. Navigate to the project directory:
 
 ```shell
-cd bookmarks2
+cd comic-unity
 ```
 
 3. Install project dependencies using npm:
@@ -29,7 +29,7 @@ npm install
 npm start
 ```
 
-2. Open your web browser and visit http://localhost:3000 to access Bookmarks2 locally.
+2. Open your web browser and visit http://localhost:3000 to access the app locally.
 
 ### For developers
 
