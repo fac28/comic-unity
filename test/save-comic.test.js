@@ -10,7 +10,7 @@ test('POSTs to /save stores a new comic square', async function () {
 
   const { status, headers } = await request('/save', {
     method: 'POST',
-    body: 'image=testString',
+    body: 'image=testString&caption=test',
     redirect: 'manual',
     headers: { 'content-type': 'application/x-www-form-urlencoded' },
   });
@@ -20,13 +20,13 @@ test('POSTs to /save stores a new comic square', async function () {
   assert.equal(
     status,
     302,
-    `Expected log in to redirect, got instead status: ${status}`
+    `Expected save image to redirect, got instead status: ${status}`
   );
 
   assert.equal(
     headers.location,
     '/..',
-    `Expected log in to redirect to home page but instead got: ${headers.location}`
+    `Expected save image to redirect to home page but instead got: ${headers.location}`
   );
 
   assert.equal(
@@ -48,14 +48,14 @@ test('Subsequent POSTs to /saves stores a following comic square', async functio
 
   await request('/save', {
     method: 'POST',
-    body: 'image=testString',
+    body: 'image=testString&caption=test',
     redirect: 'manual',
     headers: { 'content-type': 'application/x-www-form-urlencoded' },
   });
 
   await request('/save', {
     method: 'POST',
-    body: 'image=testString2',
+    body: 'image=testString2&caption=test2',
     redirect: 'manual',
     headers: { 'content-type': 'application/x-www-form-urlencoded' },
   });
