@@ -114,12 +114,13 @@ h1 {
 }
 
 .card {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   border: 4px black solid;
   width: 20rem;
   height: 20rem;
+  margin-bottom: 2.5rem;
 }
 
 .card img {
@@ -141,4 +142,10 @@ h1 {
 
 #captionError {
   color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    height: 289px;
+  }
 }
