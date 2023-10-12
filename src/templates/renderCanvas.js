@@ -1,4 +1,15 @@
-const drawImage = () => {
+const renderCanvas = () => {
+  const colours = [
+    'black',
+    'white',
+    'red',
+    'orange',
+    'yellow',
+    'green',
+    'blue',
+    'purple',
+  ];
+
   return /*html*/ `
     <!doctype html>
     <html lang="en">
@@ -21,14 +32,12 @@ const drawImage = () => {
             </div>
             <div class="flex-column">
               <div class="color-controls">
-                <button id='black-button' class="color-button"></button>
-                <button id='white-button' class="color-button white"></button>
-                <button id='red-button' class="color-button red"></button>
-                <button id='orange-button' class="color-button orange"></button>
-                <button id='yellow-button' class="color-button yellow"></button>
-                <button id='green-button' class="color-button green"></button>
-                <button id='blue-button' class="color-button blue"></button>
-                <button id='purple-button' class="color-button purple"></button>
+                ${colours
+                  .map((colour) => {
+                    return /*html*/ `<button id='${colour}-button' class="color-button ${colour}"></button>`;
+                  })
+                  .join(' ')}
+               
               </div>
               <div class="thickness-controls">
                 <button id='thickness-1' class="thickness-button"></button>
@@ -47,4 +56,4 @@ const drawImage = () => {
   `;
 };
 
-module.exports = drawImage;
+module.exports = renderCanvas;

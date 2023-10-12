@@ -3,12 +3,12 @@ const router = express.Router();
 const comicHome = require('../templates/comicHome');
 
 const { listComics } = require('../model/comic.js');
-// const { dailyWiper } = require('../utils/dailyWiper');
+const { dailyWiper } = require('../utils/dailyWiper');
 
 router.get('/', (req, res) => {
   try {
     // dailyWiper clears comic every new day. Comment out to disable
-    // dailyWiper();
+    dailyWiper();
     const content = listComics();
     res.send(comicHome(content));
   } catch (err) {

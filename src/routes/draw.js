@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const drawImage = require('../templates/drawImage');
+const renderCanvas = require('../templates/renderCanvas');
 
 router.get('/', (req, res) => {
   try {
-    res.send(drawImage());
+    res.send(renderCanvas());
   } catch (err) {
     console.log(err);
     throw err;

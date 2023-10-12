@@ -23,6 +23,7 @@ cd comic-unity
 ```shell
 npm install
 ```
+
 1. Start the Node.js server:
 
 ```shell
@@ -56,4 +57,4 @@ Tess: DevOps
 
 ### Credits
 
-The project was created by <a href="https://github.com/nichgalzin">Nich Galzin</a>, <a href="https://github.com/GeorgeKlemperer">George Klemperer</a>, <a href="https://github.com/dylancobb">Dylan  Cobb,</a> & <a href="https://github.com/tess-phillips">Tess Phillips.</a>
+The project was created by <a href="https://github.com/nichgalzin">Nich Galzin</a>, <a href="https://github.com/GeorgeKlemperer">George Klemperer</a>, <a href="https://github.com/dylancobb">Dylan Cobb,</a> & <a href="https://github.com/tess-phillips">Tess Phillips.</a>

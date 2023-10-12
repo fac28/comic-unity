@@ -78,7 +78,7 @@ colControls.addEventListener('click', (event) => {
 function colorSelected(e, color) {
   const buttons = document.querySelectorAll('.color-button');
   for (const button of buttons) {
-    button.style.boxShadow = "";
+    button.style.boxShadow = '';
   }
   e.style.boxShadow = `inset 0 0 0 5px #${color}`;
 }
@@ -112,7 +112,7 @@ thicknessControls.addEventListener('click', (event) => {
 function thicknessSelected(e) {
   const buttons = document.querySelectorAll('.thickness-button');
   for (const button of buttons) {
-    button.style.boxShadow = "";
+    button.style.boxShadow = '';
   }
   e.style.boxShadow = `inset 0 0 0 5px #6495ed`;
 }
@@ -137,6 +137,7 @@ saveButton.addEventListener('click', () => {
     return console.log(caption.value.length);
   }
 
+  //Save image fetch request
   fetch(endpoint, {
     method: 'POST',
     redirect: 'follow',
