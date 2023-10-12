@@ -1,6 +1,6 @@
 # Comic-unity
 
-Comic-unity is a web app to create collaborative comic strips. Anyone can add a frame, and the story is built in submission order. Each frame can be accompanied by a caption (50 caracter limit) and every day the comic resets to blank.
+Comic-unity is a web app to create collaborative comic strips. Anyone can add a frame, and the story is built in submission order. Each frame can be accompanied by a caption (50 caracter limit) and once a week the comic resets to blank.
 
 https://comic-unity.fly.dev/
 
