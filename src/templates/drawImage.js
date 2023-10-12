@@ -12,14 +12,14 @@ const drawImage = () => {
       <body>
         <header class='header'>
           <h1>Comic-unity</h1>
-          <form action="/draw/back-button" method="GET"><button type="submit" class="button">Go back</button></form>
+          <form action="/draw/back-button" method="GET" tabindex="1"><button type="submit" class="button">Go back</button></form>
         </header>
         <main class="card-container" role="region" aria-label="Drawing Canvas">
           <div class="flex">
             <canvas id='canvas' height="500px" width="500px" aria-label="Canvas for Drawing"></canvas>
             <div class="flex-column justify-content-center">
               <p>Caption:</p>
-              <textarea name="caption" id="caption" rows="6" aria-label="Caption Text" aria-describedby="canvas">Default Text</textarea>
+              <textarea name="caption" id="caption" rows="6" aria-label="Caption Text" aria-describedby="canvas" tabindex="2">Default Text</textarea>
             </div>
             <div class="flex-column">
               <div class="color-controls">
@@ -39,7 +39,7 @@ const drawImage = () => {
                 <button id='thickness-4' class="thickness-button"></button>
                 <button id='thickness-5' class="thickness-button"></button>
               </div>
-              <button id='save-button' class="button">Save Image</button>
+              <button id='save-button' class="button" tabindex="3">Save Image</button>
             </div>
           </div>
         </main>
