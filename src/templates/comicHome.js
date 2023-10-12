@@ -12,9 +12,9 @@ const comicHome = (content) => {
       <body>
         <header class='header'>
           <h1>Comic-unity</h1>
-          <form action="/button" method="GET"><button type="submit" class="button">+</button></form>
+          <form action="/button" method="GET" tabindex="1"><button type="submit" class="button">+</button></form>        
         </header>
-        <main class="card-container">
+        <main class="card-container" role="region" aria-label="Comic Cards">          
           ${content
             .map(
               (x) => /*html*/ `<div class="card">
