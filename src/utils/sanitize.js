@@ -1,5 +1,5 @@
 function sanitize(unsafe) {
-    return unsafe.replace(/</g, "&lt;");
+  return unsafe.replace(/</g, '&lt;');
 }
 
-module.exports = { sanitize }
+module.exports = { sanitize };

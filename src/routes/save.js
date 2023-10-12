@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const { createComic } = require('../model/comic.js');
-const { sanitize } = require('../utils/sanitize.js')
+const { sanitize } = require('../utils/sanitize.js');
 
 router.post('/', (req, res) => {
   const dataURL = req.body.image;
