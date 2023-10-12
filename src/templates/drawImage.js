@@ -14,10 +14,12 @@ const drawImage = () => {
           <h1>Comic-unity</h1>
           <form action="/draw/back-button" method="GET"><button type="submit" class="button">Go back</button></form>
         </header>
-        <main class="card-container">
+        <main class="card-container" role="region" aria-label="Drawing Canvas">
           <div class="flex">
-            <canvas id='canvas' height="500px" width="500px"></canvas>
-            <div class="flex-column justify-content-center"><p>Caption:</p><textarea name="caption" id="caption" rows="6">Default Text</textarea>
+            <canvas id='canvas' height="500px" width="500px" aria-label="Canvas for Drawing"></canvas>
+            <div class="flex-column justify-content-center">
+              <p>Caption:</p>
+              <textarea name="caption" id="caption" rows="6" aria-label="Caption Text" aria-describedby="canvas">Default Text</textarea>
             </div>
             <div class="flex-column">
               <div class="color-controls">
