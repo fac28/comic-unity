@@ -8,22 +8,23 @@ function reset() {
       `);
 }
 
-function dailyWiper() {
-  let comicDay;
+function weeklyWiper() {
+  let comicDate;
 
   if (getComicById(1)) {
-    comicDay = new Date(getComicById(1).created_at).getDay();
+    comicDate = new Date(getComicById(1).created_at).getTime();
   } else {
-    comicDay = new Date().getDay();
+    comicDate = new Date().getTime();
     console.log('no id=1 comic found');
   }
 
-  let currentDay = new Date().getDay();
+  let currentDay = new Date().getTime();
+  const weekInMilliseconds = 7 * 24 * 60 * 60 * 1000;
 
-  if (currentDay !== comicDay) {
+  if (currentDay - comicDate >= weekInMilliseconds) {
     reset();
     console.log('comic database reset');
   }
 }
 
-module.exports = { dailyWiper };
+module.exports = { weeklyWiper };
